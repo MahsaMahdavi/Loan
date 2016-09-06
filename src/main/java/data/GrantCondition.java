@@ -9,6 +9,20 @@ public class GrantCondition {
     private String maximumContractPeriod;
     private String minimumContractCost;
     private String maximumContractCost;
+    private int conditionId;
+    private LoanType loanType;
+
+    public GrantCondition() {
+
+    }
+
+    public GrantCondition(String name, String minimumContractPeriod, String maximumContractPeriod, String minimumContractCost, String maximumContractCost) {
+        this.name = name;
+        this.minimumContractPeriod = minimumContractPeriod;
+        this.maximumContractPeriod = maximumContractPeriod;
+        this.minimumContractCost = minimumContractCost;
+        this.maximumContractCost = maximumContractCost;
+    }
 
     public String getName() {
         return name;
@@ -48,5 +62,21 @@ public class GrantCondition {
 
     public void setMaximumContractCost(String maximumContractCost) {
         this.maximumContractCost = maximumContractCost;
+    }
+
+    public LoanType getLoanType() {
+        return loanType;
+    }
+
+    public void setLoanType(LoanType loanType) {
+        this.loanType = loanType;
+    }
+
+    public int getConditionId() {
+        return conditionId;
+    }
+
+    public void setConditionId(int conditionId) {
+        this.conditionId = conditionId;
     }
 }

@@ -8,8 +8,8 @@
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="connection.username">mass</property>
     <property name="connection.password">mah</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
 <mapping resource="LoanType.hbm.xml"/>
-<mapping resource="Loan.hbm.xml"/>
 <mapping resource="GrantCondition.hbm.xml"/>
   </session-factory>
 

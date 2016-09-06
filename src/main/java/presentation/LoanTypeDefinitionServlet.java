@@ -12,15 +12,16 @@ import java.io.IOException;
  */
 public class LoanTypeDefinitionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String loanTypeName = request.getParameter("loanTypeName");
-       String interestRate = request.getParameter("interestRate");
-        response.sendRedirect("grant_condition.jsp");
-        //toye web.xml ye ras bere to jsp ? :|
-     //   RequestDispatcher requestDispatcher = request.getRequestDispatcher("grant_condition.jsp");
-       // requestDispatcher.forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String loanTypeName = request.getParameter("loanTypeName");
+        String interestRate = request.getParameter("interestRate");
+        request.setAttribute("loanTypeName", loanTypeName);
+        request.setAttribute("interestRate", interestRate);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("grant_condition.jsp");
+        //response.sendRedirect("grant_condition.jsp?loanTypeName="+loanTypeName+"&interestRate="+interestRate);
+         requestDispatcher.forward(request, response);
     }
 }

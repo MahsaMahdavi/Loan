@@ -2,11 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="data.LoanType" table="loanType">
-        <id name="id" type="int" column="id">
+    <class name="data.GrantCondition" table="grantCondition">
+        <id name="ConditionId" type="int" column="id">
             <generator class="native"></generator>
         </id>
-        <property name="loanTypeName" column="name" type="string"/>
-        <property name="interestRate" column="interestRate" type="int"/>
+        <property name="name" column="name" type="java.lang.String"/>
+        <property name="minimumContractPeriod" column="minimumContractPeriod" type="java.lang.String"/>
+        <property name="maximumContractPeriod" column="maximumContractPeriod" type="java.lang.String"/>
+        <property name="minimumContractCost" column="minimumContractCost" type="java.lang.String"/>
+        <property name="maximumContractCost" column="maximumContractCost" type="java.lang.String"/>
+        <many-to-one name="loanType" class="data.LoanType" fetch="select">
+            <column name="loanTypeId" not-null="true">
+            </column>
+            </many-to-one>
     </class>
 </hibernate-mapping>

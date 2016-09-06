@@ -3,10 +3,16 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="data.LoanType" table="loanType">
-        <id name="id" type="int" column="id">
+        <id name="loanTypeId" type="int" column="id">
             <generator class="native"></generator>
         </id>
         <property name="loanTypeName" column="name" type="string"/>
         <property name="interestRate" column="interestRate" type="int"/>
+        <set name="grantCondition" table="grantCondition" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="data.GrantCondition"/>
+        </set>
     </class>
 </hibernate-mapping>

@@ -10,7 +10,10 @@
 <head>
     <title>نوع تسهیلات</title>
     <style>
-        body{direction: rtl;}
+        body {
+            direction: rtl;
+        }
+
         input[type=text] {
             width: 100%;
             padding: 12px 20px;
@@ -19,6 +22,7 @@
             border: 2px solid #2f93ff;
             border-radius: 4px;
         }
+
         input[type=submit] {
             width: 100%;
             background-color: #5573af;
@@ -29,6 +33,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
         input[type=submit]:hover {
             background-color: #1533a0;
         }
@@ -40,13 +45,14 @@
         }
     </style>
     <script type="text/javascript">
-
         function validate() {
             var valid = true;
-            if (document.getElementById('loanName').value = '') {
+            if (document.getElementById("loanName").value == "") {
+                window.alert("in");
                 valid = false;
             }
-            if (document.getElementById('interestRate').value = '') {
+            if (document.getElementById("interestRate").value == "") {
+                window.alert("on");
                 valid = false;
             }
             if (valid) {
@@ -60,13 +66,13 @@
 </head>
 <body>
 <div>
-<form action="loanType" method="post">
-    <label for="loanName">نام نوع تسهیلات:</label>
-    <input type="text" id="loanName" name="loanTypeName">
-    <label for="interestRate">نرخ سود:</label>
-    <input type="text" id="interestRate" name="interestRate">
-    <input type="button" value="ثبت" onclick="validate()">
-</form>
+    <form action="loanType" method="get">
+        <label for="loanName">نام نوع تسهیلات:</label>
+        <input type="text" id="loanName" name="loanTypeName">
+        <label for="interestRate">نرخ سود:</label>
+        <input type="text" id="interestRate" name="interestRate">
+        <input type="button" value="ثبت" onclick="validate()">
+    </form>
 </div>
 </body>
 </html>

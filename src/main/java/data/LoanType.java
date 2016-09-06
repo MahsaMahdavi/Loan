@@ -1,13 +1,25 @@
 package data;
 
+import java.util.ArrayList;
+import java.util.Set;
+
 /**
  * Created by mahsa on 04/09/2016.
  */
 public class LoanType {
-    private int id;
+    private int loanTypeId;
     private int interestRate;
     private String loanTypeName;
-    private GrantCondition grantCondition;
+    private Set<GrantCondition> grantCondition;
+
+    public LoanType() {
+    }
+
+    public LoanType(String loanTypeName, int interestRate, Set<GrantCondition> grantConditions) {
+        this.loanTypeName = loanTypeName;
+        this.interestRate = interestRate;
+        this.grantCondition = grantConditions;
+    }
 
     public int getInterestRate() {
         return interestRate;
@@ -24,12 +36,20 @@ public class LoanType {
     public void setLoanTypeName(String loanTypeName) {
         this.loanTypeName = loanTypeName;
     }
-
-    public GrantCondition getGrantCondition() {
+    
+    public Set<GrantCondition> getGrantCondition() {
         return grantCondition;
     }
 
-    public void setGrantCondition(GrantCondition grantCondition) {
+    public void setGrantCondition(Set<GrantCondition> grantCondition) {
         this.grantCondition = grantCondition;
+    }
+
+    public int getLoanTypeId() {
+        return loanTypeId;
+    }
+
+    public void setLoanTypeId(int loanTypeId) {
+        this.loanTypeId = loanTypeId;
     }
 }
